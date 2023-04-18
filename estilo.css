@@ -7,7 +7,69 @@ body {
   
   }
 
-
+  #actualidad {
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  #actualidad th {
+    background-color: #4CAF50;
+    color: white;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  #actualidad td,
+  #actualidad th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #actualidad tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  #actualidad tr:hover {
+    background-color: #ddd;
+  }
+  
+  @media screen and (max-width: 600px) {
+    #actualidad {
+      width: 100%;
+    }
+    
+    #actualidad td,
+    #actualidad th {
+      font-size: 12px;
+      padding: 5px;
+    }
+    
+    #actualidad th:nth-child(1) {
+      display: none;
+    }
+    
+    #actualidad tr {
+      border-bottom: 1px solid #ddd;
+      display: block;
+      margin-bottom: 10px;
+    }
+    
+    #actualidad td {
+      border-bottom: 0;
+      display: block;
+      font-size: 13px;
+      text-align: right;
+    }
+    
+    #actualidad td:before {
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
 
 table {
   width: 100%;
@@ -23,10 +85,6 @@ td {
 th {
   background-color: #a30505;
   font-weight: bold;
-}
-
-tr:nth-child(even) {
-  background-color: #24a703;
 }
   
     #nav1{
@@ -124,29 +182,9 @@ p{
   #BestHero th , #competitivo th {
     background-color: coral;
   }
-  #requisitos {
-    border: solid 1px #ffee00;
-    margin: 20px auto;
-    width: 80%;
-    border-collapse: collapse;
-    font-size: 20px;
-    font-style: italic;
-     }
   
-  #requisitos th,  #requisitos td {
-    border: solid 2px #ff03d5;
-    padding: 10px;
-    text-align: center;
-    background-color: #dad9d7;
-    color: #791a03;
-  }
-  
-  #requisitos th {
-    background-color: #b6b2b2;
-    color: #cc0404;
-    border: solid 2px #ff03ff;
-  }
-  
+ 
+ 
  
   @media screen and (max-width: 600px) {
     #requisitos {
@@ -155,26 +193,11 @@ p{
   }
   
   
-  #requisitos th,  #requisitos td {
-    border: solid 2px #039aff;
-    padding: 10px;
-    text-align: center;
-    background-color: #dad9d7;
-    color: #791a03;
-  }
   
   #requisitos th {
     background-color: #b6b2b2;
     color: #cc0404;
     border: solid 2px #ff0303;
-  }
-  
-  #requisitos tr:nth-child(even) {
-    background-color: #03850d;
-  }
-  
-  #requisitos tr:hover {
-    background-color: #039aff;
   }
   
   @media screen and (max-width: 600px) {
@@ -183,20 +206,7 @@ p{
     }
   }
   
-  
-  #requisitos th {
-    background-color: #b6b2b2;
-    color: #cc0404;
-    border-color: #039aff;
-  }
-  
-  #requisitos tr:nth-child(even) {
-    background-color: #03850d;
-  }
-  
-  #requisitos tr:hover {
-    background-color: #039aff;
-  }
+
   
   @media screen and (max-width: 600px) {
     #requisitos {
@@ -335,6 +345,3 @@ footer nav {
   width: 80%;
 }
 
-#formulario-modal{
-  display: none;
-}

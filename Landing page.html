@@ -5,19 +5,21 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset='utf-8' />
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous" />
-  <link rel="stylesheet"
+  
+    <link rel="stylesheet"
     href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" />
-  <meta charset='utf-8' />
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css' />
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js'></script>
-  <link
+    
+    <link
     href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100&family=Nunito:wght@400;700;900&display=swap"
     rel="stylesheet">
-
-  <link rel="stylesheet" href="estilo.css" />
+ 
+    <link rel="stylesheet" href="estilo.css" />
   <title>Dota 2</title>
 </head>
 
@@ -162,47 +164,50 @@
         <iframe src="https://steamdb.info/embed/?appid=570" height="389" style="border:0;overflow:hidden;width:100%" loading="lazy"></iframe>
       </aside>
       <section>
+        
         <p>¿Ya conocías o jugabas Dota 2 con anterioridad? Si es así y tienes ganas de jugar con gente de otros lugares, 
-          en el siguiente botón podras dejar tu informacion y encontrar gente de tu nivel.</p>
-          <input type="button" id="agregar-jugador" name="Agrega tus datos">
-          <div id="formulario-modal">
-            <h2>Agrega tus datos</h2>
-            <form>
-              <div id="formulario-modal">
+          en el siguiente formulario podras dejar tu informacion y encontrar gente de tu nivel.</p>
+          
+          <section class="modal-jugador">
+                                           <div id="formulario-modal">
                 <h2>Agrega tus datos</h2>
                 <form>
                   <label for="nombre">Nombre:</label>
                   <input type="text" id="nombre" name="nombre"><br><br>
-                  
+          
                   <label for="nickname">Nickname:</label>
                   <input type="text" id="nickname" name="nickname"><br><br>
-
-                <label for="id-amigo">ID de amigo:</label>
-                <input type="number" id="id-amigo" name="id-amigo"><br><br>
-                
-                <label for="nivel">Nivel:</label>
-                <select id="nivel" name="nivel">
+                  
+                  <label for="id-amigo">ID de amigo:</label>
+                  <input type="number" id="id-amigo" name="id-amigo"><br><br>
+          
+                  <label for="discord">ID de Discord:</label>
+                  <input type="text" id="id-discord" name="discord"><br><br>
+          
+                  <label for="nivel">Nivel:</label>
+                  <select id="nivel" name="nivel" required>
                     <option value="nuevo">Nuevo jugador</option>
                     <option value="principiante">Principiante</option>
                     <option value="intermedio">Intermedio</option>
                     <option value="experto">Experto</option>
-                </select><br><br>
-                <label for="rol">Rol:</label>              
-                <input type="checkbox" id="hard_support" name="rol" value="hard_support">
-                <label for="hard_support">Hard Support</label>
-                <input type="checkbox" id="soft_support" name="rol" value="soft_support">
-                <label for="soft_support">Soft Support</label>
-                <input type="checkbox" id="offlaner" name="rol" value="offlaner">
-                <label for="offlaner">Offlaner</label>
-                <input type="checkbox" id="midlaner" name="rol" value="midlaner">
-                <label for="midlaner">Midlaner</label>
-                <input type="checkbox" id="carry" name="rol" value="carry">
-                <label for="carry">Carry</label><br><br>
-                <input type="submit" value="Enviar" class="btn btn-dark">
-            </form><br><br>
-        </div>
-      </section>
-  
+                  </select><br><br>
+          
+                  <label for="rol">Rol:</label>
+                  <label for="hard_support">Hard Support</label>
+                  <input type="checkbox" id="hard_support" name="rol" value="hard_support">
+                  <label for="soft_support">Soft Support</label>
+                  <input type="checkbox" id="soft_support" name="rol" value="soft_support">
+                  <label for="offlaner">Offlaner</label>
+                  <input type="checkbox" id="offlaner" name="rol" value="offlaner">
+                  <label for="midlaner">Midlaner</label>
+                  <input type="checkbox" id="midlaner" name="rol" value="midlaner">
+                  <label for="carry">Carry</label>
+                  <input type="checkbox" id="carry" name="rol" value="carry"><br>
+               
+          
+                    <input type="submit" value="Enviar" class="btn btn-danger">
+                  </form>
+                </div> 
   
   </section><br>
 
@@ -332,7 +337,25 @@
       frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
       allowfullscreen id="iframe2">
       </iframe><br>
-      
+      </section>
+      <section>
+        <h1>Tabla de equipos</h1>
+
+<table id="actualidad">
+  <thead>
+    <tr>
+      <th id="team-name"></th>
+    </tr>
+  </thead>
+  <tbody id="team-players">
+  </tbody>
+</table>
+<div>
+  <button id="previous" class="btn btn-danger">Anterior</button>
+  <button id="next" class="btn btn-danger">Siguiente</button>
+</div><br><br>
+      </section>
+ 
   
  
 
@@ -394,12 +417,10 @@
     </div><br>
   </section>
   <section class="container">   
-    <form>
-       
-      <h3>Reseñas:</h3>
+    <form id="formulario-comentarios">
       <p>Cuentanos tu opinion sobre este juego, dejanos saber que es lo que piensas.</p>
       <label for="nombre" class="form-check-label">Nombre:</label>
-      <input type="text" id="nombre" name="nombre" required />
+      <input type="text" id="nom" name="nombre" required />
       <label for="comentario">Comentario:</label>
       <textarea id="comentario" name="comentario" required></textarea>
       <button type="submit" onclick="agregarComentario(event)">Enviar</button>
@@ -442,6 +463,7 @@
     </footer>
     <script src="funcion.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../apidota2.js"></script>
     
 
 
